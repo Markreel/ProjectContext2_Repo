@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class ScreenShotHandler : MonoBehaviour
 {
-    [SerializeField] GameObject picturePrefab;
-    [SerializeField] GameObject hovercraft;
-
-    [SerializeField] private Texture currentPicture;
-    public List<Texture> pictures;
-
+    public Texture CurrentPicture;
     private Camera cam;
 
     private void Awake()
     {
         SetupCam();
+        TakePicture();
     }
 
     private void SetupCam()
@@ -22,20 +18,8 @@ public class ScreenShotHandler : MonoBehaviour
         cam = GetComponent<Camera>();
     }
 
-    private void Update()
+    public void TakePicture()
     {
-        //transform.position = Camera.main.transform.position;
-        //transform.rotation = Camera.main.transform.rotation;
-        //cam.fieldOfView = Camera.main.fieldOfView;
-
-        if (Input.GetButtonDown("Fire1")) { TakePicture(); }
-    }
-
-    private void TakePicture()
-    {
-        //currentPicture = Camera.main.activeTexture;
-        //Camera.main.targetTexture.
-        //pictures.Add(currentPicture);
         Camera Cam = cam;
 
         RenderTexture currentRT = RenderTexture.active;
@@ -48,21 +32,6 @@ public class ScreenShotHandler : MonoBehaviour
         Image.Apply();
         RenderTexture.active = currentRT;
 
-        currentPicture = Image;
-        pictures.Add(currentPicture);
-
-        //SpawnPhoto();
+        CurrentPicture = Image;
     }
-
-    private void SpawnPhoto()
-    {
-        GameObject _pic = Instantiate(picturePrefab, hovercraft.transform.position + Vector3.up, picturePrefab.transform.rotation);
-        _pic.transform.eulerAngles = new Vector3(_pic.transform.eulerAngles.x, hovercraft.transform.GetChild(0).eulerAngles.y + 180, _pic.transform.eulerAngles.z);
-
-        Material _mat = new Material(Shader.Find("Unlit/Texture"));
-        _mat.mainTexture = currentPicture;
-
-        _pic.GetComponent<Renderer>().material = _mat;
-    }
-
 }

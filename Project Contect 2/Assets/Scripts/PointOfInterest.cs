@@ -9,4 +9,6 @@ public class PointOfInterest : MonoBehaviour
     public List<Color> ColorPalette;
     [Range(0, 1)] public float Priority;
     public List<Sprite> Shapes;
+    public float FocusDistance;
+    public ScreenShotHandler screenShotHandler;
 }
