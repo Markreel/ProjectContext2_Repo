@@ -23,13 +23,13 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        //Time.timeScale = 0;
-        //UIManager.Instance.BlackScreen();
+        Time.timeScale = 0;
+        UIManager.Instance.BlackScreen();
 
         audioSource = gameObject.GetComponent<AudioSource>();
         audioSource.ignoreListenerPause = true;
 
-        //PlayIntroClip();
+        PlayIntroClip();
     }
 
     private void PlayIntroClip()

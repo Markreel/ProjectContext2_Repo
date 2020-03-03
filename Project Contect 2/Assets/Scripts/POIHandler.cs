@@ -18,7 +18,7 @@ public class POIHandler : MonoBehaviour
     [SerializeField] TextMeshProUGUI amountText;
     [HideInInspector] public int InspirationAmount;
 
-    [HideInInspector] public PointOfInterest CurrentPOI = null;
+    public PointOfInterest CurrentPOI = null;
     private List<PointOfInterest> visitedPointsOfInterest = new List<PointOfInterest>();
 
     private bool alreadyWokeCheapFix = false;
@@ -57,7 +57,7 @@ public class POIHandler : MonoBehaviour
             foreach (var _poi in pointsOfInterest)
             {
                 float _distance = Vector3.Distance(player.transform.position, _poi.transform.position);
-                if (_distance < _poi.FocusDistance && !visitedPointsOfInterest.Contains(_poi))
+                if (_distance < _poi.FocusDistance && !visitedPointsOfInterest.Contains(_poi) && InspirationAmount != 3)
                 {
                     CurrentPOI = _poi;
                     CinematicCameraHandler.Instance.SetFocus(_poi.transform);
