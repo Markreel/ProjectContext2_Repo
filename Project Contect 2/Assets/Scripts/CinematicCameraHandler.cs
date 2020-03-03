@@ -13,18 +13,26 @@ public class CinematicCameraHandler : MonoBehaviour
 
     private void Awake()
     {
-        Instance = Instance ?? this;
+        if (Instance != null)
+        {
+            if (Instance != this) { Destroy(gameObject); }
+        }
+        else { Instance = this; DontDestroyOnLoad(Instance); }
         SetupCameras();
     }
 
-    private void SetupCameras()
+    public void SetupCameras()
     {
-        groupCamera.m_LookAt = targetGroup.transform;
+        mainCamera = GameObject.Find("CM_Main").GetComponent< CinemachineVirtualCamera>();
+        groupCamera = GameObject.Find("CM_GroupCam").GetComponent<CinemachineVirtualCamera>();
+        targetGroup = GameObject.Find("TargetGroup1").GetComponent<CinemachineTargetGroup>();
 
+        groupCamera.m_LookAt = targetGroup.transform;
     }
 
     public void SetFocus(Transform _focusPoint)
     {
+        Debug.Log("WE ARE ACTUALLY FOCUSSING | target = " + _focusPoint.gameObject);
         targetGroup.m_Targets[1].target = _focusPoint;
         mainCamera.m_Priority = 0;
         groupCamera.m_Priority = 1;

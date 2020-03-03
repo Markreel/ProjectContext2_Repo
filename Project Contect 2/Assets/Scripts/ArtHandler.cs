@@ -15,6 +15,7 @@ using System.Linq;
 public class ArtHandler : MonoBehaviour
 {
     [SerializeField] List<PointOfInterest> pointsOfInterest = new List<PointOfInterest>();
+    [SerializeField] List<PointOfInterestData> pointsOfInterestData = new List<PointOfInterestData>();
 
     [SerializeField] Sprite KubismeShape;
     [SerializeField] Sprite FauvismeShape;
@@ -28,6 +29,7 @@ public class ArtHandler : MonoBehaviour
     List<GameObject> shapes = new List<GameObject>();
 
     [Header("Settings: ")]
+    [SerializeField] List<GameObject> WallPaintings = new List<GameObject>();
     [SerializeField] Color backgroundColor;
     [SerializeField] int shapeAmount = 5;
     [SerializeField] bool isBlackWhite = false;
@@ -36,10 +38,28 @@ public class ArtHandler : MonoBehaviour
     Coroutine pointillismeRoutine;
     Coroutine combineRoutine;
 
-    private void Update()
+    private void Awake()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            Combine();
+        if(POIHandler.Instance.PointsOfInterestData.Count > 0) { pointsOfInterestData = POIHandler.Instance.PointsOfInterestData; }
+    }
+
+    private void Start()
+    {
+        Combine();
+    }
+
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Space))
+    //        Combine();
+    //}
+
+    private void DisplayArtPieces()
+    {
+        foreach (var _painting in POIHandler.Instance.Paintings)
+        {
+
+        }
     }
 
     private void HandleShapes()
@@ -213,66 +233,215 @@ public class ArtHandler : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         backgroundPlane.SetActive(false);
 
-        foreach (var _poi in pointsOfInterest)
-        {
-            Texture2D _tex = (Texture2D)_poi.screenShotHandler.CurrentPicture;
-            //artCam.backgroundColor = backgroundColor;
+        Texture2D _finalTexture = new Texture2D(pointsOfInterestData[0].Picture.width, pointsOfInterestData[0].Picture.height);
 
+        //Create a single texture from all the given textures
+        foreach (var _poi in pointsOfInterestData)
+        {
+            Texture2D _tex = (Texture2D)_poi.Picture;
+            for (int x = 0; x <= _tex.width; x++)
+            {
+                for (int y = 0; y <= _tex.height; y++)
+                {
+                    Color _pixel = _tex.GetPixel(x, y);
+
+                    if (_pixel != Color.clear) { _finalTexture.SetPixel(x, y, _pixel); }
+                }
+            }
+        }
+
+        foreach (var _shape in shapes)
+        {
+            Destroy(_shape);
+        }
+        shapes.Clear();
+
+
+        List<Vector2Int> _closedPixelsList = new List<Vector2Int>();
+
+        float _grayValue = 1;
+        bool _wait = false;
+        Color _previousColor = Color.white;
+
+        while (_grayValue > 0f)
+        {
             foreach (var _shape in shapes)
             {
                 Destroy(_shape);
             }
             shapes.Clear();
 
+            _grayValue -= Time.deltaTime / 10; //Duration of animation
 
-            List<Vector2Int> _closedPixelsList = new List<Vector2Int>();
-
-            float _grayValue = 1;
-            while (_grayValue > 0f) 
+            for (int x = 0; x <= shapeAmount; x++)
             {
-                foreach (var _shape in shapes)
+                for (int y = 0; y <= shapeAmount; y++)
                 {
-                    Destroy(_shape);
+                    if (_closedPixelsList.Contains(new Vector2Int(x, y))) { continue; } //CheckOfMoetSkippen
+
+                    Color _px = _finalTexture.GetPixel(_finalTexture.width / shapeAmount * x, _finalTexture.height / shapeAmount * y);
+                    //if(_px == Color.clear) { continue; }
+                    if (isBlackWhite) { _px = BlackWhite(_px); }
+
+                    float _h, _s, _v;
+                    Color.RGBToHSV(_px, out _h, out _s, out _v);
+
+
+                    //Skip pixel aan de hand van de grijswaarde
+                    //if (_px.grayscale < _grayValue - 0.25f) { _wait = false; continue; }
+                    if (_s < _grayValue - 0.25f) { if (!_wait) { continue; } _px = _previousColor; }
+                    else { _wait = true; }
+                    _previousColor = _px;
+
+                    //else { Debug.Log(_px.grayscale); }
+                    //else { _closedPixelsList.Add(new Vector2Int(x, y)); }
+                    //else { yield return null; }
+
+                    GameObject _obj = Instantiate(shapePrefab, transform.parent);
+                    shapes.Add(_obj);
+
+                    Vector3 _offset = new Vector3(Random.Range(-5f / shapeAmount, 5f / shapeAmount), 0, Random.Range(-5f / shapeAmount, 5f / shapeAmount));
+                    //Debug.Log(_offset);
+                    _obj.transform.position = new Vector3(95 + (10f / shapeAmount * x), 0.5f, -5f + (10f / shapeAmount * y)) + _offset;
+                    _obj.transform.localScale = Vector3.one * 1.2f / shapeAmount;
+
+                    SpriteRenderer _sr = _obj.GetComponent<SpriteRenderer>();
+                    _sr.sprite = pointsOfInterest[0].Shapes[0];
+
+                    _sr.color = _px;
                 }
-                shapes.Clear();
-
-                _grayValue -= Time.deltaTime / 3; //Duration of animation
-
-                for (int x = 0; x <= shapeAmount; x++)
-                {
-                    for (int y = 0; y <= shapeAmount; y++)
-                    {
-                        if (_closedPixelsList.Contains(new Vector2Int(x, y))) { continue; } //CheckOfMoetSkippen
-
-                        Color _px = _tex.GetPixel(_tex.width / shapeAmount * x, _tex.height / shapeAmount * y);
-                        if (isBlackWhite) { _px = BlackWhite(_px); }
-
-                        //Skip pixel aan de hand van de grijswaarde
-                        if (_px.grayscale > _grayValue) { continue; }
-                        else { _closedPixelsList.Add(new Vector2Int(x, y)); }
-                        //else { yield return null; }
-
-                        GameObject _obj = Instantiate(shapePrefab, transform.parent);
-                        shapes.Add(_obj);
-
-                        Vector3 _offset = new Vector3(Random.Range(-5f / shapeAmount, 5f / shapeAmount), 0, Random.Range(-5f / shapeAmount, 5f / shapeAmount));
-                        //Debug.Log(_offset);
-                        _obj.transform.position = new Vector3(95 + (10f / shapeAmount * x), 0.5f, -5f + (10f / shapeAmount * y)) + _offset;
-                        _obj.transform.localScale = Vector3.one * 1.2f / shapeAmount;
-
-                        SpriteRenderer _sr = _obj.GetComponent<SpriteRenderer>();
-                        _sr.sprite = _poi.Shapes[0];
-
-                        _sr.color = _px;
-                    }
-                }
-                yield return new WaitForSeconds(0.001f);
             }
-
-            //_threshHold = 1f;
-            yield return null;
+            if (_wait) { yield return new WaitForSeconds(0.001f); }
         }
+
+        POIHandler.Instance.Paintings.Add(SaveArtPiece());
+        UIManager.Instance.FadeOut(3);
+        AudioManager.Instance.PlayOutroClip(); //ALLEEN IN NARRATIVE
+        //LevelManager.Instance.LoadScene(0); //ALLEEN IN SANDBOX
+
+        //_threshHold = 1f;
+        yield return null;
+
     }
+
+    private Texture2D SaveArtPiece()
+    {
+        RenderTexture _currentRT = RenderTexture.active;
+        RenderTexture.active = artCam.targetTexture;
+
+        artCam.Render();
+
+        Texture2D _returnImage = new Texture2D(artCam.targetTexture.width, artCam.targetTexture.height);
+
+        _returnImage.ReadPixels(new Rect(0, 0, artCam.targetTexture.width, artCam.targetTexture.height), 0, 0);
+        _returnImage.Apply();
+        RenderTexture.active = _currentRT;
+
+        return _returnImage;
+    }
+
+    //private IEnumerator IECombine()
+    //{
+    //    //float _threshHold = 0.35f;
+
+    //    foreach (var _shape in shapes)
+    //    {
+    //        Destroy(_shape);
+    //    }
+    //    shapes.Clear();
+
+    //    backgroundPlane.SetActive(true);
+    //    yield return new WaitForSeconds(0.5f);
+    //    backgroundPlane.SetActive(false);
+
+    //    Texture2D _finalTexture = new Texture2D(pointsOfInterest[0].screenShotHandler.CurrentPicture.width, pointsOfInterest[0].screenShotHandler.CurrentPicture.height);
+
+    //    //Create a single texture from all the given textures
+    //    foreach (var _poi in pointsOfInterest)
+    //    {
+    //        Texture2D _tex = (Texture2D)_poi.screenShotHandler.CurrentPicture;
+    //        for (int x = 0; x <= _tex.width; x++)
+    //        {
+    //            for (int y = 0; y <= _tex.height; y++)
+    //            {
+    //                Color _pixel = _tex.GetPixel(x, y);
+
+    //                if (_pixel != Color.clear) { _finalTexture.SetPixel(x, y, _pixel); }
+    //            }
+    //        }
+    //    }
+
+    //    foreach (var _poi in pointsOfInterest)
+    //    {
+    //        //if(pointsOfInterest.IndexOf(_poi) != pointsOfInterest.Count - 1) { continue; }
+    //        Texture2D _tex = (Texture2D)_poi.screenShotHandler.CurrentPicture;
+    //        //artCam.backgroundColor = backgroundColor;
+
+    //        foreach (var _shape in shapes)
+    //        {
+    //            Destroy(_shape);
+    //        }
+    //        shapes.Clear();
+
+
+    //        List<Vector2Int> _closedPixelsList = new List<Vector2Int>();
+
+    //        float _grayValue = 1;
+    //        bool _wait = false;
+    //        Color _previousColor = Color.white;
+
+    //        while (_grayValue > 0f)
+    //        {
+    //            foreach (var _shape in shapes)
+    //            {
+    //                Destroy(_shape);
+    //            }
+    //            shapes.Clear();
+
+    //            _grayValue -= Time.deltaTime / 10; //Duration of animation
+
+    //            for (int x = 0; x <= shapeAmount; x++)
+    //            {
+    //                for (int y = 0; y <= shapeAmount; y++)
+    //                {
+    //                    if (_closedPixelsList.Contains(new Vector2Int(x, y))) { continue; } //CheckOfMoetSkippen
+
+    //                    Color _px = _tex.GetPixel(_tex.width / shapeAmount * x, _tex.height / shapeAmount * y);
+    //                    //if(_px == Color.clear) { continue; }
+    //                    if (isBlackWhite) { _px = BlackWhite(_px); }
+
+    //                    //Skip pixel aan de hand van de grijswaarde
+    //                    //if (_px.grayscale < _grayValue - 0.25f) { _wait = false; continue; }
+    //                    if (_px.grayscale < _grayValue - 0.25f) { if (!_wait) { continue; } _px = _previousColor; }
+    //                    else { _wait = true; }
+    //                    _previousColor = _px;
+
+    //                    //else { Debug.Log(_px.grayscale); }
+    //                    //else { _closedPixelsList.Add(new Vector2Int(x, y)); }
+    //                    //else { yield return null; }
+
+    //                    GameObject _obj = Instantiate(shapePrefab, transform.parent);
+    //                    shapes.Add(_obj);
+
+    //                    Vector3 _offset = new Vector3(Random.Range(-5f / shapeAmount, 5f / shapeAmount), 0, Random.Range(-5f / shapeAmount, 5f / shapeAmount));
+    //                    //Debug.Log(_offset);
+    //                    _obj.transform.position = new Vector3(95 + (10f / shapeAmount * x), 0.5f, -5f + (10f / shapeAmount * y)) + _offset;
+    //                    _obj.transform.localScale = Vector3.one * 1.2f / shapeAmount;
+
+    //                    SpriteRenderer _sr = _obj.GetComponent<SpriteRenderer>();
+    //                    _sr.sprite = _poi.Shapes[0];
+
+    //                    _sr.color = _px;
+    //                }
+    //            }
+    //            if (_wait) { yield return new WaitForSeconds(0.001f); }
+    //        }
+
+    //        //_threshHold = 1f;
+    //        yield return null;
+    //    }
+    //}
+
 
     //Returns the black/white value of the given color
     private Color BlackWhite(Color _col)
