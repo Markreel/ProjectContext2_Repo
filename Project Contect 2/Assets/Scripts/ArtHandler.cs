@@ -315,9 +315,9 @@ public class ArtHandler : MonoBehaviour
         }
 
         POIHandler.Instance.Paintings.Add(SaveArtPiece());
-        UIManager.Instance.FadeOut(3);
-        AudioManager.Instance.PlayOutroClip(); //ALLEEN IN NARRATIVE
-        //LevelManager.Instance.LoadScene(0); //ALLEEN IN SANDBOX
+        //UIManager.Instance.FadeOut(3);
+        //AudioManager.Instance.PlayOutroClip(); //ALLEEN IN NARRATIVE
+        LevelManager.Instance.LoadScene(0); //ALLEEN IN SANDBOX
 
         //_threshHold = 1f;
         yield return null;

@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 12327884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.365e-12, y: 8050, z: 0.000011913}
-  m_LocalScale: {x: 160.66414, y: 8274.371, z: 160.66414}
+  m_LocalScale: {x: 50, y: 8274.371, z: 50}
   m_Children: []
   m_Father: {fileID: 6251210212317267951}
   m_RootOrder: 0
@@ -446,7 +446,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 62365542}
-  m_LocalRotation: {x: 0.29672128, y: 0.048378948, z: -0.15347563, w: 0.9413083}
+  m_LocalRotation: {x: 0.29672128, y: 0.04837895, z: -0.15347563, w: 0.9413083}
   m_LocalPosition: {x: 0, y: 71.4, z: -68.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1761,7 +1761,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 613189035}
-  m_LocalRotation: {x: 0.050016325, y: -0.0000000021481055, z: 1.0757548e-10, w: 0.9987485}
+  m_LocalRotation: {x: 0.05001633, y: 0.0000000021481066, z: -1.07574526e-10, w: 0.9987485}
   m_LocalPosition: {x: 0, y: 6.94, z: 12.279999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2119,7 +2119,7 @@ MonoBehaviour:
     m_Bits: 256
   maxTorque: 1
   torqueMultiplier: 2
-  maxVelocity: 40
+  maxVelocity: 80
   velocityMultiplier: 20
   maxBoostVelocity: 100
   boostVelocityMultiplier: 4
@@ -7905,7 +7905,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1513736511}
-  m_LocalRotation: {x: 0.050016325, y: -0.0000000021481055, z: 1.0757548e-10, w: 0.9987485}
+  m_LocalRotation: {x: 0.05001633, y: 0.0000000021481066, z: -1.07574526e-10, w: 0.9987485}
   m_LocalPosition: {x: 0, y: 6.94, z: 12.279999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
