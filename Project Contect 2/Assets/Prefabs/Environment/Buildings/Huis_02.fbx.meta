@@ -1,0 +1,189 @@
+fileFormatVersion: 2
+guid: 97ebbaa7fd938f14ea73175d462a8688
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Huis_02 1
+    100004: Mid_03
+    100006: Raam_031
+    100008: Raam_032
+    100010: Raam_033
+    100012: Raam_034
+    100014: Raam_035
+    100016: Raam_036
+    100018: Raam_037
+    100020: Raam_038
+    100022: Raam_039
+    100024: Raam_040
+    100026: Raam_041
+    100028: Raam_042
+    100030: Raam_043
+    100032: Raam_044
+    100034: Raam_045
+    100036: Raam_046
+    100038: Top_01
+    400000: //RootNode
+    400002: Huis_02 1
+    400004: Mid_03
+    400006: Raam_031
+    400008: Raam_032
+    400010: Raam_033
+    400012: Raam_034
+    400014: Raam_035
+    400016: Raam_036
+    400018: Raam_037
+    400020: Raam_038
+    400022: Raam_039
+    400024: Raam_040
+    400026: Raam_041
+    400028: Raam_042
+    400030: Raam_043
+    400032: Raam_044
+    400034: Raam_045
+    400036: Raam_046
+    400038: Top_01
+    2100000: Huis_Texture_02
+    2300000: Huis_02 1
+    2300002: Mid_03
+    2300004: Raam_031
+    2300006: Raam_032
+    2300008: Raam_033
+    2300010: Raam_034
+    2300012: Raam_035
+    2300014: Raam_036
+    2300016: Raam_037
+    2300018: Raam_038
+    2300020: Raam_039
+    2300022: Raam_040
+    2300024: Raam_041
+    2300026: Raam_042
+    2300028: Raam_043
+    2300030: Raam_044
+    2300032: Raam_045
+    2300034: Raam_046
+    2300036: Top_01
+    3300000: Huis_02 1
+    3300002: Mid_03
+    3300004: Raam_031
+    3300006: Raam_032
+    3300008: Raam_033
+    3300010: Raam_034
+    3300012: Raam_035
+    3300014: Raam_036
+    3300016: Raam_037
+    3300018: Raam_038
+    3300020: Raam_039
+    3300022: Raam_040
+    3300024: Raam_041
+    3300026: Raam_042
+    3300028: Raam_043
+    3300030: Raam_044
+    3300032: Raam_045
+    3300034: Raam_046
+    3300036: Top_01
+    4300000: Huis_02
+    4300002: Mid_03
+    4300004: Top_01
+    4300006: Raam_031
+    4300008: Raam_032
+    4300010: Raam_033
+    4300012: Raam_034
+    4300014: Raam_035
+    4300016: Raam_036
+    4300018: Raam_037
+    4300020: Raam_038
+    4300022: Raam_039
+    4300024: Raam_040
+    4300026: Raam_041
+    4300028: Raam_042
+    4300030: Raam_043
+    4300032: Raam_044
+    4300034: Raam_045
+    4300036: Raam_046
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1000
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
