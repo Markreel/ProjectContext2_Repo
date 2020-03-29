@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4790810749778014968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4790810749778014970}
+  - component: {fileID: 4790810749778014969}
+  m_Layer: 0
+  m_Name: ArtHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4790810749778014970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4790810749778014968}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4790810749778014969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4790810749778014968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54ce41725e3838947b41a310d7a5a4c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsOfInterest:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  KubismeShape: {fileID: 21300000, guid: f19313608af1f6349b1e2c14dbde62dd, type: 3}
+  FauvismeShape: {fileID: 21300000, guid: eb43aaba0c22b244fba2d30cfd4afb6d, type: 3}
+  ExpressionismeShape: {fileID: 21300000, guid: 9d684fa75df357942a58eddeded83490,
+    type: 3}
+  PointillismeShape: {fileID: 21300000, guid: 9d684fa75df357942a58eddeded83490, type: 3}
+  artCam: {fileID: 0}
+  screenShotHandler: {fileID: 0}
+  backgroundPlane: {fileID: 0}
+  shapePrefab: {fileID: 168626799063076164, guid: d8404ce13dcb183428097f1612b90d97,
+    type: 3}
+  WallPaintings: []
+  backgroundColor: {r: 0.47058824, g: 0.47058824, b: 0.47058824, a: 1}
+  shapeAmount: 35
+  isBlackWhite: 0

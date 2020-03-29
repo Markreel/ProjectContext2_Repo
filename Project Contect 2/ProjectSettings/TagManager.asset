@@ -14,12 +14,12 @@ TagManager:
   - 
   - 
   - Terrain
-  - Photo
+  - POI_Pisa
   - ProceduralArtShapes
-  - POI
-  - 
-  - 
-  - 
+  - POI_Tree
+  - PostProcessing
+  - POI_Mac
+  - POI_Ending
   - 
   - 
   - 
