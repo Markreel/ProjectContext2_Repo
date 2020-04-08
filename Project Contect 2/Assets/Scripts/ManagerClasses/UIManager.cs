@@ -26,9 +26,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] float paintTextFlickerDuration;
     [SerializeField] AnimationCurve paintTextFlickerCurve;
 
+    [Header("Subtitle Settings: ")]
+    [SerializeField] TextMeshProUGUI subtitleText;
+
     private Coroutine fadeRoutine;
     private Coroutine letterboxTransitionRoutine;
     private Coroutine paintTextFadeRoutine;
+    private Coroutine displaySubtitleRoutine;
 
     private void Awake()
     {
@@ -147,6 +151,32 @@ public class UIManager : MonoBehaviour
     public void DisableMainMenu()
     {
         MainMenuWindow.SetActive(false);
+    }
+
+    public void DisplaySubtitle(Subtitle _subtitle)
+    {
+        if (displaySubtitleRoutine != null) StopCoroutine(displaySubtitleRoutine);
+        displaySubtitleRoutine = StartCoroutine(IEDisplaySubtitle(_subtitle));
+    }
+
+    private IEnumerator IEDisplaySubtitle(Subtitle _subtitle)
+    {
+        subtitleText.text = "";
+
+        foreach (var _line in _subtitle.Lines)
+        {
+            yield return new WaitForSeconds(_line.Delay);
+
+            subtitleText.text = _line.Text;
+
+            yield return new WaitForSeconds(_line.Duration);
+
+            subtitleText.text = "";
+
+            yield return null;
+        }
+
+        yield return null;
     }
 
 }

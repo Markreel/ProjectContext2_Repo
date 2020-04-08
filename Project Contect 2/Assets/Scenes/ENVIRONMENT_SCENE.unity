@@ -5857,8 +5857,9 @@ GameObject:
   - component: {fileID: 84537576}
   - component: {fileID: 84537575}
   - component: {fileID: 84537579}
+  - component: {fileID: 84537580}
   m_Layer: 5
-  m_Name: Canvas(UIManager)
+  m_Name: Canvas(UIManager/SubtitleManager)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5939,6 +5940,7 @@ RectTransform:
   - {fileID: 534351258}
   - {fileID: 530814857}
   - {fileID: 1622240721}
+  - {fileID: 1765598423}
   - {fileID: 1440313991}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -6048,6 +6050,187 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  subtitleText: {fileID: 1765598424}
+--- !u!114 &84537580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84537574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 007677d763dd3544389e9dc2be82c7eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Subtitles:
+  - Name: 0 (Intro Kirsten)
+    Lines:
+    - Text: "Hey Gaspar, this is Kirsten.\r"
+      Delay: 1
+      Duration: 1.8
+    - Text: "I thought I would just leave a voicemail with all the info about the
+        exhibition.\r"
+      Delay: 0
+      Duration: 4
+    - Text: A little extra clarity never hurt anyone, especially not you!
+      Delay: 0.25
+      Duration: 3.75
+    - Text: "It\u2019s on August 20th, so tomorrow, at Pennello Studios in Lucca."
+      Delay: 0.25
+      Duration: 6
+    - Text: The doors open at 9 am, so be there at 7 for the preparations!
+      Delay: 0.5
+      Duration: 6
+    - Text: We are looking forward to it, hopefully you are too! We'll see you then!
+      Delay: 0.25
+      Duration: 5
+  - Name: 1 (Intro Gaspar)
+    Lines:
+    - Text: Goooood morning Gaspar, Kevin here.
+      Delay: 6
+      Duration: 3
+    - Text: "Sounds like you\u2019re already on the road. Not surprising, if you choose
+        to leave the day before your exhibition!"
+      Delay: 0.25
+      Duration: 7
+    - Text: "If you\u2019d just come to Lucca with me last week, but no! Mister had
+        more important things to do!"
+      Delay: 0.25
+      Duration: 6.5
+    - Text: Fortunately, you still have all day to travel, so you should arrive well
+        before sunrise.
+      Delay: 0.25
+      Duration: 6.75
+  - Name: 2 (Pas op voor SolarShrooms)
+    Lines:
+    - Text: Hey Gasp, eyes on the road! Or you'll end up with a solarshroom under
+        your hovercraft.
+      Delay: 0
+      Duration: 5
+  - Name: 3 (Reclamebord)
+    Lines:
+    - Text: Another city park? As if there aren't enough parks yet! You probably won't
+        care. Your studio is so full of plants, it looks like a rainforest!
+      Delay: 0
+      Duration: 9.781
+  - Name: 4 (Brug Kapot)
+    Lines:
+    - Text: "Ah, that\u2019s unfortunate.\nBut I think... I think there is a detour.
+        That detour might also be interesting!\r"
+      Delay: 0
+      Duration: 6.4
+    - Text: And while you are at it, keep your eyes open for inspiration.
+      Delay: 0.25
+      Duration: 4
+    - Text: "Maybe make some new paintings, scribble a bit, perhaps you\u2019ll even
+        have enough work for a new exhibition!"
+      Delay: 0.5
+      Duration: 5.2
+  - Name: 5 (Boom)
+    Lines:
+    - Text: "Wow\u2026 that\u2019s sick! Is this a tree? How can it still be outside?
+        You should definitely paint this Gasp!"
+      Delay: 0
+      Duration: 7.5
+    - Text: "This is, of course, a bit different from the big trees in the city, but
+        that\u2019s what makes it cool!"
+      Delay: 0.25
+      Duration: 5
+    - Text: Let me see if I can figure out how this thing can still be here.
+      Delay: 0.75
+      Duration: 2.75
+  - Name: 6 (Boom Uitleg)
+    Lines:
+    - Text: "Oh Gasp, listen. Apparently trees can petrify! That is what must have
+        happened here. Pretty cool!\r"
+      Delay: 0
+      Duration: 8.248
+  - Name: 7 (Voetbal)
+    Lines:
+    - Text: By the way, did you watch the game yesterday? Seriously, that ref was
+        really biased and he wasn't even paying attention.
+      Delay: 0
+      Duration: 7.5
+    - Text: We would have won if he had given us that corner.
+      Delay: 0.25
+      Duration: 4
+  - Name: 8 (Maccie)
+    Lines:
+    - Text: Gasp, look! Look over there! Wait, you're good at history, right? What
+        does that M stand for again?
+      Delay: 0
+      Duration: 7
+    - Text: Okay, it wasn't the Islam. Christianity? Christianity was the one with
+        a cross. Do you remember? Oh, you better paint this too!
+      Delay: 0.5
+      Duration: 9
+  - Name: 9 (Canyon)
+    Lines:
+    - Text: "Is that a canyon? You\u2019ll really have to start watching the time."
+      Delay: 0
+      Duration: 5.5
+    - Text: "If you get through it quickly enough, you\u2019ll still make it. I think."
+      Delay: 0.25
+      Duration: 4
+  - Name: 10 (Storing)
+    Lines:
+    - Text: "Gaspar, this canyon, it\u2019s taking really long."
+      Delay: 0
+      Duration: 2.7
+    - Text: "I hope you\u2019re out soon, because otherwise"
+      Delay: 0.1
+      Duration: 2
+    - Text: "I just don't know \u2026 make it before \u2026 dome clos \u2026 watch
+        \u2026 "
+      Delay: 0.25
+      Duration: 8
+  - Name: 11 (Kevin Terug)
+    Lines:
+    - Text: "Gaspar? Gasp! Gasp\u2026"
+      Delay: 0
+      Duration: 3
+    - Text: The canyon took you way too long! The dome closes any time now!
+      Delay: 0.1
+      Duration: 4
+    - Text: You have to make it! Step on it! Drive!
+      Delay: 0.25
+      Duration: 5.692
+  - Name: 12 (Kevin roept 1)
+    Lines:
+    - Text: "Gasp, if you don\u2019t hurry up now, you won\u2019t make it! Come on,
+        you can do it!\r"
+      Delay: 0
+      Duration: 4.824
+  - Name: 13 (Kevin Roept 1.5)
+    Lines:
+    - Text: Gaspar? Gaspar, you should still be able to make it! You just have to!
+        Drive, Gasp!
+      Delay: 0
+      Duration: 6.07
+  - Name: 14 (Kevin roept 2)
+    Lines:
+    - Text: "Gaspar, are you almost there? Man, once the dome closes, it won\u2019t
+        open! Punch it!"
+      Delay: 0
+      Duration: 6.6
+  - Name: 15 (Kevin roept 3)
+    Lines:
+    - Text: "Gaspar! Aaah, if that bridge hadn\u2019t\u2026 Gaspar, come on!"
+      Delay: 0
+      Duration: 5.809
+  - Name: 16 (Einde)
+    Lines:
+    - Text: Gaspar?
+      Delay: 0
+      Duration: 1.2
+    - Text: "Gaspar, I tried to keep the dome open a little longer, but they just
+        wouldn\u2019t listen."
+      Delay: 0.25
+      Duration: 5.75
+    - Text: Gaspar! Gaspar?? Gaspa...
+      Delay: 0.25
+      Duration: 4
 --- !u!1 &84620321
 GameObject:
   m_ObjectHideFlags: 0
@@ -12457,6 +12640,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 84537580}
+        m_MethodName: DisplaySubtitleFromIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &174905804
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12794,6 +12988,17 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 84537580}
+        m_MethodName: DisplaySubtitleFromIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 16
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -14755,6 +14960,17 @@ MonoBehaviour:
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 84537580}
+        m_MethodName: DisplaySubtitleFromIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 13
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -26386,6 +26602,17 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 85
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 84537580}
+        m_MethodName: DisplaySubtitleFromIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 11
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -39846,6 +40073,17 @@ MonoBehaviour:
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 84537580}
+        m_MethodName: DisplaySubtitleFromIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 15
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -58189,6 +58427,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 84537580}
+        m_MethodName: DisplaySubtitleFromIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &768193562
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -66286,6 +66535,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 84537580}
+        m_MethodName: DisplaySubtitleFromIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &925217740
 GameObject:
   m_ObjectHideFlags: 0
@@ -67569,6 +67829,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 84537580}
+        m_MethodName: DisplaySubtitleFromIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 14
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1021523614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67870,6 +68141,17 @@ MonoBehaviour:
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 84537580}
+        m_MethodName: DisplaySubtitleFromIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -78180,7 +78462,18 @@ MonoBehaviour:
   extraPaintDelay: 0
   unityEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 84537580}
+        m_MethodName: DisplaySubtitleFromIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1211622123
 GameObject:
   m_ObjectHideFlags: 0
@@ -79330,6 +79623,17 @@ MonoBehaviour:
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 84537580}
+        m_MethodName: DisplaySubtitleFromIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 12
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -102016,7 +102320,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 84537578}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -108762,6 +109066,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 84537580}
+        m_MethodName: DisplaySubtitleFromIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1522864994
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -108889,6 +109204,17 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 84537580}
+        m_MethodName: DisplaySubtitleFromIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -116841,6 +117167,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 84537580}
+        m_MethodName: DisplaySubtitleFromIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!65 &1702328013
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -117698,6 +118035,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 84537580}
+        m_MethodName: DisplaySubtitleFromIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1735152641
 GameObject:
   m_ObjectHideFlags: 0
@@ -118443,6 +118791,162 @@ Transform:
   m_Father: {fileID: 1010959608}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1765598422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1765598423}
+  - component: {fileID: 1765598425}
+  - component: {fileID: 1765598424}
+  m_Layer: 5
+  m_Name: SubtitleText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1765598423
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765598422}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 84537578}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 7.169983}
+  m_SizeDelta: {x: 1500, y: 142.83}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &1765598424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765598422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: a8d1d6b95bdc38e4bb31400a3f7ead79, type: 2}
+  m_sharedMaterial: {fileID: -7912156434985172787, guid: a8d1d6b95bdc38e4bb31400a3f7ead79,
+    type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontSize: 48
+  m_fontSizeBase: 48
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_textAlignment: 514
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_firstOverflowCharacterIndex: -1
+  m_linkedTextComponent: {fileID: 0}
+  m_isLinkedTextComponent: 0
+  m_isTextTruncated: 0
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_ignoreRectMaskCulling: 0
+  m_ignoreCulling: 1
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_VertexBufferAutoSizeReduction: 1
+  m_firstVisibleCharacter: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_textInfo:
+    textComponent: {fileID: 1765598424}
+    characterCount: 0
+    spriteCount: 0
+    spaceCount: 0
+    wordCount: 0
+    linkCount: 0
+    lineCount: 0
+    pageCount: 0
+    materialCount: 1
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_spriteAnimator: {fileID: 0}
+  m_hasFontAssetChanged: 0
+  m_subTextObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1765598425
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765598422}
+  m_CullTransparentMesh: 0
 --- !u!1 &1766422010
 GameObject:
   m_ObjectHideFlags: 0
@@ -134114,6 +134618,17 @@ MonoBehaviour:
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 84537580}
+        m_MethodName: DisplaySubtitleFromIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

@@ -28,6 +28,11 @@ public class AudioManager : MonoBehaviour
     private Coroutine fadeMusicRoutine;
     private Coroutine panicMusicRoutine;
 
+    private void Update()
+    {
+        musicSource.pitch = effectSource.pitch = Time.timeScale;
+    }
+
     private void Awake()
     {
         if (Instance != null)
@@ -98,7 +103,11 @@ public class AudioManager : MonoBehaviour
     public float BehaviourOnStart()
     {
         PlayMusicClip(musicClipA);
-        if (clipToPlayOnAwake != null) { return PlayClipAndReturnDuration(clipToPlayOnAwake, 2); }
+        if (clipToPlayOnAwake != null)
+        {
+            UIManager.Instance.DisplaySubtitle(SubtitleManager.Instance.Subtitles[0]);
+            return PlayClipAndReturnDuration(clipToPlayOnAwake, 2);
+        }
         else { return 0; }
     }
 

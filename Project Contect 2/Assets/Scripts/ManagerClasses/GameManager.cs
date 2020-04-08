@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = Instance ?? this;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void Start()
@@ -61,9 +63,18 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.UpArrow)) { Time.timeScale++; }
-        //if (Input.GetKeyDown(KeyCode.DownArrow)) { Time.timeScale--; }
-        //if (Input.GetKeyDown(KeyCode.Space)) { Time.timeScale = 1; }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            if (Time.timeScale >= 1) { Time.timeScale++; }
+            else { Time.timeScale += 0.1f; }
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            if (Time.timeScale > 1) { Time.timeScale--; }
+            else { Time.timeScale -= 0.1f; }
+
+        }
+        if (Input.GetKeyDown(KeyCode.Space)) { Time.timeScale = 1; }
         if (Input.GetKeyDown(KeyCode.E) && isInMenu) { StartBehaviour(); }
     }
 
