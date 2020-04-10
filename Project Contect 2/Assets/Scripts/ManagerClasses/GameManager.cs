@@ -15,6 +15,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject startCamera;
     [SerializeField] DomeBehaviour domeA;
 
+    private bool timeManipulationCheatActive = false;
+    private int cheatCodeIndex;
+    private KeyCode[] timeManipulationCheatCode =
+        new KeyCode[] { KeyCode.UpArrow, KeyCode.UpArrow,
+            KeyCode.DownArrow, KeyCode.DownArrow,
+            KeyCode.LeftArrow, KeyCode.RightArrow,
+            KeyCode.LeftArrow, KeyCode.RightArrow,
+            KeyCode.B, KeyCode.A};
+
     private bool isInMenu = true;
 
     private void Awake()
@@ -30,9 +39,6 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.BehaviourOnStart();
         player.BehaviourOnStart();
         onStartEvent.Invoke();
-
-
-
     }
 
     private void StartBehaviour()
@@ -63,19 +69,46 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            if (Time.timeScale >= 1) { Time.timeScale++; }
-            else { Time.timeScale += 0.1f; }
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            if (Time.timeScale > 1) { Time.timeScale--; }
-            else { Time.timeScale -= 0.1f; }
-
-        }
-        if (Input.GetKeyDown(KeyCode.Space)) { Time.timeScale = 1; }
+        HandleCheats();
         if (Input.GetKeyDown(KeyCode.E) && isInMenu) { StartBehaviour(); }
+    }
+
+    private void HandleCheats()
+    {
+        if(timeManipulationCheatActive == false)
+        {
+            if (Input.anyKeyDown)
+            {
+                if (Input.GetKeyDown(timeManipulationCheatCode[cheatCodeIndex]))
+                {
+                    cheatCodeIndex++;
+                }
+                else
+                {
+                    cheatCodeIndex = 0;
+                }
+            }
+
+            if (cheatCodeIndex == timeManipulationCheatCode.Length)
+            {
+                timeManipulationCheatActive = true;
+            }
+        }
+
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                if (Time.timeScale >= 1) { Time.timeScale++; }
+                else { Time.timeScale += 0.1f; }
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                if (Time.timeScale > 1) { Time.timeScale--; }
+                else { Time.timeScale -= 0.1f; }
+            }
+            if (Input.GetKeyDown(KeyCode.Space)) { Time.timeScale = 1; }
+        }
     }
 
     public void DeactivateGameObject(GameObject _obj)

@@ -31,6 +31,9 @@ public class Hovercraft_V4 : MonoBehaviour
     [SerializeField] float checkDistance;
     [SerializeField] Vector3 rotationalDrag;
 
+    [Header("Fix")]
+    [SerializeField] Controls controls;
+
     private Vector3 velocity;
     private Vector3 torque;
     private bool isGrounded;
@@ -91,6 +94,8 @@ public class Hovercraft_V4 : MonoBehaviour
     {
         float _hor = Input.GetAxis("Horizontal");
         float _ver = Input.GetAxis("Vertical");
+
+        if (controls.IsEnabled) { if (_hor != 0 || _ver != 0) { controls.DisableWithDelay(); } }
 
         if (Input.GetButton("Boost")) { isBoosting = true; }
         else { isBoosting = false; }
