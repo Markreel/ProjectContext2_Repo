@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 112000000, guid: 133e3fe0e234d0d40b4d3183d53c97a6,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -11217,7 +11217,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93228019}
-  m_LocalRotation: {x: -0.075546786, y: -0.8351191, z: 0.12404416, w: -0.53054863}
+  m_LocalRotation: {x: -0.075546786, y: -0.8351192, z: 0.12404418, w: -0.5305486}
   m_LocalPosition: {x: 4951.316, y: 400.7, z: 532.7623}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -109418,7 +109418,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1524175190}
-  m_LocalRotation: {x: -0.075546786, y: -0.8351191, z: 0.12404416, w: -0.53054863}
+  m_LocalRotation: {x: -0.075546786, y: -0.8351192, z: 0.12404418, w: -0.5305486}
   m_LocalPosition: {x: 4951.316, y: 400.7, z: 532.7623}
   m_LocalScale: {x: 0.5000006, y: 0.50000006, z: 0.5000007}
   m_Children: []
@@ -119613,7 +119613,7 @@ PrefabInstance:
         Designer\r\n\r\n\r\n<color=#cc1515>LAURA TREURNIET\r</color>\r\nEnvironment
         Art\r\nMaterial Designer\r\nVFX\r\nLighting\r\nMusician\r\nVoice of Kirsten\r\n\r\n\r\n\r\n<color=#cc1515>HIDDE
         KLEIN-NAGELVOORT\r</color>\r\nWriter\r\nWorldbuilder\r\n\r\n\r\n<color=#cc1515>SPECIAL
-        THANKS TO</color>\r\nTim Peeters\r\n"
+        THANKS TO</color>\r\nTim Peeters\r\nCasper Elfrink"
       objectReference: {fileID: 0}
     - target: {fileID: 2135389940, guid: 0a621fb9d3f7d2248a9789055505cfef, type: 3}
       propertyPath: m_firstOverflowCharacterIndex
@@ -119621,19 +119621,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2135389940, guid: 0a621fb9d3f7d2248a9789055505cfef, type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 625
+      value: 639
       objectReference: {fileID: 0}
     - target: {fileID: 2135389940, guid: 0a621fb9d3f7d2248a9789055505cfef, type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 69
+      value: 71
       objectReference: {fileID: 0}
     - target: {fileID: 2135389940, guid: 0a621fb9d3f7d2248a9789055505cfef, type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 88
+      value: 89
       objectReference: {fileID: 0}
     - target: {fileID: 2135389940, guid: 0a621fb9d3f7d2248a9789055505cfef, type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 58
+      value: 59
       objectReference: {fileID: 0}
     - target: {fileID: 2135389940, guid: 0a621fb9d3f7d2248a9789055505cfef, type: 3}
       propertyPath: m_fontAsset
