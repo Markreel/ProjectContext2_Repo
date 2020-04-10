@@ -11216,7 +11216,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93228019}
-  m_LocalRotation: {x: -0.075546786, y: -0.8351191, z: 0.12404416, w: -0.53054863}
+  m_LocalRotation: {x: -0.075546786, y: -0.8351192, z: 0.12404418, w: -0.5305486}
   m_LocalPosition: {x: 4951.316, y: 400.7, z: 532.7623}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -57914,9 +57914,9 @@ MonoBehaviour:
   musicClipA: {fileID: 8300000, guid: 5dfa17b0ab690d445938a59ed0d7c356, type: 3}
   creditsMusic: {fileID: 8300000, guid: 8a2e0c6e34390f14ea1ad6882aeb3cbd, type: 3}
   hoverBikeClip: {fileID: 8300000, guid: c29deb50feae62a4c8febf29baecdf45, type: 3}
-  panicMusicStart: {fileID: 8300000, guid: 40a9000d461bd0d42b4fd29b5591744c, type: 3}
-  panicMusicLoop: {fileID: 8300000, guid: b26ce0ddf66a7ca45b582c6cbb393fb1, type: 3}
-  panicMusicEnd: {fileID: 8300000, guid: 9de166f3ae28b0d4b86d7bd32ed4ac07, type: 3}
+  panicMusicStart: {fileID: 8300000, guid: 0bc844f485ad0db498b0115d9484718f, type: 3}
+  panicMusicLoop: {fileID: 8300000, guid: f501a29e26fa8754da46bfa2af54011d, type: 3}
+  panicMusicEnd: {fileID: 8300000, guid: f48e6d76bdcf9ab49b97881fc66ae946, type: 3}
   fadeMusicDuration: 1.5
 --- !u!82 &744058132
 AudioSource:
@@ -109305,7 +109305,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1524175190}
-  m_LocalRotation: {x: -0.075546786, y: -0.8351191, z: 0.12404416, w: -0.53054863}
+  m_LocalRotation: {x: -0.075546786, y: -0.8351192, z: 0.12404418, w: -0.5305486}
   m_LocalPosition: {x: 4951.316, y: 400.7, z: 532.7623}
   m_LocalScale: {x: 0.5000006, y: 0.50000006, z: 0.5000007}
   m_Children: []
